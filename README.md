@@ -1,6 +1,6 @@
 # Contribuer au Projet
 
-Merci de votre intérêt pour la contribution à ce projet SaaS basé sur le RAG ! Ce document décrit les étapes pour
+Merci de votre intérêt pour la contribution à ce projet pédagogique ! Ce document décrit les étapes pour
 configurer l'environnement de développement et les bonnes pratiques pour contribuer efficacement.
 
 ## 🛠 Prérequis
@@ -16,53 +16,22 @@ Avant de commencer, assurez-vous d'avoir installé les outils suivants :
 1. **Cloner le dépôt**
 
    ```bash
-   git clone nathan-kedinger/atelier-css-buildsi
-   cd rag-out
+   git clone git@gitlab.tech.orange:peri-si/atelier-css-buildsi.git
+   cd atelier-css-buildsi
    ```
 
-2. **Configurer les variables d'environnement**
-
-    - Récupérez le fichier `.env.local` sur GitHub ou auprès du responsable du projet.
-    - Placez-le à la racine du projet.
-    - Important : ne jamais committer ce fichier dans le dépôt Git !
-
-3. **Lancer l'application avec Docker**
+2. **Lancer l'application avec Docker**
 
    ```bash
    docker-compose up --build
    ```
 
-4. **Installer les dépendances Symfony** (uniquement à la première installation) :
+3. **Vérifier que l'application fonctionne** 🚀
 
+   L'application devrait maintenant être accessible et fonctionnelle à l'adresse :
    ```bash
-   docker-compose exec -it backend bash
-   composer install
+   http://localhost:5111
    ```
-
-5. **Exécuter les migrations de base de données** :
-
-   ```bash
-   symfony console d:m:m
-   ```
-
-6. **Charger les fixtures si nécessaire** :
-
-   ```bash
-   symfony console d:f:l
-   ```
-
-7. **Vérifier que l'application fonctionne** 🚀
-
-   L'application devrait maintenant être accessible et fonctionnelle !
-
-## $ Utilisation de de Stripe en local
-
-Pour pouvoir tester la modification d'abonnement en local, il est nécessaire de lancer le webhook de sécurité via cette
-commande :
-
-   ```bash
-    stripe listen --forward-to localhost:5003/api/webhook
-  ```   
 
 ## 🔄 Processus de Contribution
 
